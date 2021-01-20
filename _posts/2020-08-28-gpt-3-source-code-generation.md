@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: GPT-3를 보면서 생각하는 source code generation
+categories:
+ - post
 ---
 
 

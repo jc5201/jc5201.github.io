@@ -1,6 +1,8 @@
 ---
 layout: posts
 title: 멋진 신세계
+categories:
+ - book 
 ---
 
 ## 멋진 신세계 / Brave New World
