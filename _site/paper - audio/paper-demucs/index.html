@@ -1,0 +1,649 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Music Source Separation in the waveform domain - NGD’s blog</title>
+<meta name="description" content="intro">
+
+
+  <meta name="author" content="Jaechang Kim">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="NGD's blog">
+<meta property="og:title" content="Music Source Separation in the waveform domain">
+<meta property="og:url" content="https://jc5201.github.io/paper%20-%20audio/paper-demucs/">
+
+
+  <meta property="og:description" content="intro">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-02-05T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://jc5201.github.io/paper%20-%20audio/paper-demucs/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "NGD",
+      "url": "https://jc5201.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="NGD's blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                }
+            },
+            tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$'] ],
+            processEscapes: true,
+        }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+        alert("Math Processing Error: "+message[1]);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+        alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>  
+    
+  </head>
+
+  <body class="layout--posts">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          NGD's blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/about/" >About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jaechang Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Pohang</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jaechang@postech.ac.kr">
+            <meta itemprop="email" content="jaechang@postech.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jaechang-kim-15454414b" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/jc5201" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Music Source Separation in the waveform domain</h1>
+    
+    <h3 id="intro">intro</h3>
+
+<p>facebook ai 쪽에 있는 defossez라는 아저씨 논문이다.</p>
+
+<p>Demucs 라고 다른 논문들에서 baseline으로 주로 제시되는 모델 중 하나인데 publish된 적은 없는 것 같다.</p>
+
+<p>데모부터 들어보면 상당히 괜찮은 결과를 보여준다. https://ai.honu.io/papers/demucs/index.html</p>
+
+<p>작년에 wave u net 가지고 씨름하지 말고 이 모델을 바로 시도했으면 어땠을까 싶다.</p>
+
+<h3 id="content">content</h3>
+
+<p>푸는 문제는 전형적인 music source separation 문제다. mixture signal을 (1)drums, (2)bass, (3)other, (4)vocals로 구분한다.</p>
+
+<p>waveform domain에서 문제를 풀기 위해서 크게 두 가지 방법을 시도한다. 기존에 존재하는 Conv-Tasnet이라는 speech source separation 모델을 음악에 적용시키는 것과 이 연구에서 제시된 demucs라는 모델이다.</p>
+
+<h4 id="adapting-conv-tasnet-for-music-source-separation">Adapting Conv-Tasnet for music source separation</h4>
+
+<p>Conv-Tasnet을 적용하면서 생긴 변경점을 살펴보면 아래와 같다.</p>
+
+<ul>
+  <li>SI-SDR loss -&gt; 이 연구에서는 L1 loss</li>
+  <li>single channel (monophonic speech separation) -&gt; stereo (stereophonic music source separation)</li>
+  <li>receptive field 길이</li>
+</ul>
+
+<p>L1 loss를 사용하는 이유에 대해서는 뒤에서 설명한다.</p>
+
+<p>이렇게 변형한 모델의 결과를 보면 여러 단점들이 있다고 한다.(a constant broadband noise, hollow instruments attacks or even missing parts.)</p>
+
+<p>저자가 생각하기에 이렇게 된 이유는 Conv-Tasnet이 기본적으로 masking 방식인데 악기(stem)들이 겹치면서 비가역적인 정보 손실이 일어나서 masking으로 그 손실을 복구할 수 없는 것이라고 분석했다.</p>
+
+<h4 id="demucs">Demucs</h4>
+
+<p>이제 demucs 모델 구조를 설명한다. 기본적으로 demucs는 wave-u-net 구조에서 motivated 되었다는 것을 알 수 있다. wave-u-net 구조를 기준으로 설명하자면  encoder(downsampling block) 에서 conv 뿐만 아니라 GLU(gated linear unit)을 사용하고, decoder(Upsampling block) 에서도 interpolation 대신 transposed convolution을 사용한다. bottleneck 에서는 bidirectional LSTM을 사용한다. wave-u-net 보다 convolution에서 output channel을 훨씬 깊게 만들었다. 그 이외에 skip connection 이나 전체 구조는 wave-u-net 또는 u-net과 비슷하다.</p>
+
+<p><img src="/assets/img/image-20210205132204708.png" alt="image-20210205132204708" /></p>
+
+<p>loss function은 마찬가지로 L1 reconstruction loss를 사용한다. L1 loss function을 쓰면 phase가 다른 소리에 대해 큰 loss가 나오기 때문에 문제가 될 수 있어서 sound generation task에서 spectrogram loss를 사용하는 경우가 있다. 하지만 demucs의 경우는 모델에서 원본 소리의 phase를 알 수 있고, skip connection을 통해 쉽게 phase를 복구할 수 있기 때문에 L1/L2 loss를 사용하는 데 문제가 없다고 한다.</p>
+
+<p>defossez 아저씨의 이전 연구 (SING) 에서 여러 loss를 비교한 실험이 있어서 L1/l2 이외의 loss는 테스트 하지 않았다고 한다. 이전 연구에서 테스트한 loss는 L2, spectral loss 인데 multi-scale spectral loss나 SI-SDR 같은 것들에 대해서는 확인되지 않았다.</p>
+
+<p>그 이외에 fixup 처럼 initialization 단계에서 rescaling을 하거나 하는 단계가 있는데 구현 세부사항인 것 같아서 생략한다.</p>
+
+<h4 id="result">result</h4>
+
+<p>결과를 대략 보여주는 표가 있다. IRM oracle은 masking 방식의 upper bound로 생각하면 된다.</p>
+
+<p><img src="/assets/img/image-20210205133936591.png" alt="image-20210205133936591" /></p>
+
+<p>사용한 augmentation</p>
+
+<ul>
+  <li>다른 음악의 소스를 가져와서 새로운 mixture 생성</li>
+  <li>channel swap</li>
+  <li>phase inversion</li>
+</ul>
+
+
+
+<div id="post_disqus" class="container">
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://jc5201-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<ul class="taxonomy__index">
+  
+  
+    <li>
+      <a href="#2021">
+        <strong>2021</strong> <span class="taxonomy__count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2020">
+        <strong>2020</strong> <span class="taxonomy__count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2019">
+        <strong>2019</strong> <span class="taxonomy__count">1</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+  <section id="2021" class="taxonomy__section">
+    <h2 class="archive__subtitle">2021</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20-%20audio/paper-demucs/" rel="permalink">Music Source Separation in the waveform domain
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">intro
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/" rel="permalink">Unsupervised Cross-Domain Singing Voice Conversion
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">intro
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+  <section id="2020" class="taxonomy__section">
+    <h2 class="archive__subtitle">2020</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/setting/i3-setting/" rel="permalink">ubuntu GUI setting
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">사용 환경 : virtualbox + ubuntu server 20.04 + i3 + st-luke
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/random/gpt-3-source-code-generation/" rel="permalink">GPT-3를 보면서 생각하는 source code generation
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">최근 OpenAI에서 GPT-3(Generative Pre-trained Transformer 3) 라는 API 와 논문을 공개했다.
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+  <section id="2019" class="taxonomy__section">
+    <h2 class="archive__subtitle">2019</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/random/test/" rel="permalink">Jekyll blog test
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">title
+content
+—–
+‘’’
+code
+‘’’
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/jc5201" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 NGD. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://jc5201.github.io/paper%20-%20audio/paper-demucs/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/paper%20-%20audio/paper-demucs"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ngd-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>

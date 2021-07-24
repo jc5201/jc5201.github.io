@@ -1,0 +1,663 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.17.2 by Michael Rose
+  Copyright 2013-2019 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Unsupervised Cross-Domain Singing Voice Conversion - NGD’s blog</title>
+<meta name="description" content="intro">
+
+
+  <meta name="author" content="Jaechang Kim">
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="NGD's blog">
+<meta property="og:title" content="Unsupervised Cross-Domain Singing Voice Conversion">
+<meta property="og:url" content="https://jc5201.github.io/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/">
+
+
+  <meta property="og:description" content="intro">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-01-20T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="https://jc5201.github.io/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "NGD",
+      "url": "https://jc5201.github.io/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="NGD's blog Feed">
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+            TeX: {
+                equationNumbers: {
+                    autoNumber: "AMS"
+                }
+            },
+            tex2jax: {
+            inlineMath: [ ['$', '$'] ],
+            displayMath: [ ['$$', '$$'] ],
+            processEscapes: true,
+        }
+    });
+    MathJax.Hub.Register.MessageHook("Math Processing Error",function (message) {
+        alert("Math Processing Error: "+message[1]);
+    });
+    MathJax.Hub.Register.MessageHook("TeX Jax - parse error",function (message) {
+        alert("Math Processing Error: "+message[1]);
+    });
+</script>
+<script type="text/javascript" async
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>  
+    
+  </head>
+
+  <body class="layout--posts">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          NGD's blog
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/categories/" >Categories</a>
+            </li><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/about/" >About</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Jaechang Kim</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Pohang</span>
+        </li>
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="mailto:jaechang@postech.ac.kr">
+            <meta itemprop="email" content="jaechang@postech.ac.kr" />
+            <i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/jaechang-kim-15454414b" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/jc5201" itemprop="sameAs" rel="nofollow noopener noreferrer">
+            <i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <div class="archive">
+    
+      <h1 id="page-title" class="page__title">Unsupervised Cross-Domain Singing Voice Conversion</h1>
+    
+    <h3 id="intro">intro</h3>
+
+<p>facebook ai 쪽 논문이고, timbre transfer 관련이라고 보면 될 것 같다.</p>
+
+<p>처음에 학습 시킬 때 speaker identity에 따라 다른 timbre를 표현하게 학습시키고, 이후에 다른 목소리를 표현하고 싶으면 그 목소리와 비슷한 speaker identity를 찾는 모델이다.</p>
+
+<p>speaker identity를 찾는 과정은 speech 데이터에서도 찾을 수 있고, 상대적으로 적은 데이터로 할 수 있다.</p>
+
+<p>GAN 에서 G에 condition을 다양하게 줘서 노래에 대한 정보나 speaker에 대한 정보를 넘겨주고, 소리를 생성하게 하는 모델을 사용한다.</p>
+
+<h3 id="content">content</h3>
+
+<p>singing voice conversion 은 input으로 들어온 노래를 다른 사람의 목소리로 reproduce 하는 문제다. 이 논문의 결과는 https://singing-conversion.github.io/ 에서 들어볼 수 있다. 각 데이터에는 사람 1명의 목소리만 있다.</p>
+
+<p>GAN을 사용하면서 G 에 parameter로 여러 가지를 넘겨주는데, speaker-invariant feature들과 speaker identity다.</p>
+
+<p>speaker-invariant feature 로는 loudness, f0를 사용한다. loudness는 log-scaled power spectrum을 사용하고, f0는 CREPE를 사용해서 추출한다. f0를 그대로 사용하면 생성된 소리의 pitch가 불안정해서 single sinusoid sine-exitation $\Gamma (f_{crepe}(x))$ 를 사용한다. Speech의 경우 Wav2Letter라는 음성인식 쪽 모델을 가져와서 추가로 사용한다.</p>
+
+<p>Speaker identity에 관해서는 논문에 자세히 나와있지는 않은데 <a href="https://arxiv.org/abs/1904.06590">이전 논문</a> 을 참고했을 때 embedding 으로 이해하면 될 것 같다.</p>
+
+<p>모델은 기본적으로 Least-squares GAN 을 따르고 있다. 학습 목표는 크게 두 가지로 나누는데, single singer objective function 세팅과 multi-singer 세팅이다.</p>
+
+<p>Single singer objective function 의 아래와 같다.</p>
+
+<p><img src="/assets/img/image-20210120170012346.png" alt="image-20210120170012346" style="zoom:50%;" /></p>
+
+<p><img src="/assets/img/image-20210120170027904.png" alt="image-20210120170027904" style="zoom:50%;" /></p>
+
+<p>G의 objective는 여러 loss의 합으로 표현되어 있는데, adv loss 는 GAN에서 일반적으로 사용하는 objective로 볼 수 있다.</p>
+
+<p><img src="/assets/img/image-20210120170501191.png" alt="image-20210120170501191" style="zoom:50%;" /></p>
+
+<p>recon loss는 $\hat{x}$ 이 x를 얼마나 잘 reconstruciton 했는지 비교하는 것으로, multi-scale spectral loss를 사용한다. 아래 식에서 F 는 Frobenius norm인데, l2 norm이다. 첫 번째 term이 spectral peak 를 표현하고, 두 번째 term이 소리의 silent section에 대한 penalty라고 한다. 두 번째 term이 어떻게 그런 의미를 갖는지는 잘 모르겠다.</p>
+
+<p><img src="/assets/img/image-20210120170921416.png" alt="image-20210120170921416" style="zoom:50%;" /></p>
+
+<p><img src="/assets/img/image-20210120171248978.png" alt="image-20210120171248978" style="zoom:50%;" /></p>
+
+<p>나머지 두 loss는 생성된 소리의 quality를 위한 부분이고, feature extractor로 사용한 모델들의 중간 layer의 activation을 사용한다. perceptual loss의 아이디어를 가져온 것 같다.</p>
+
+<p><img src="/assets/img/image-20210120171455546.png" alt="image-20210120171455546" style="zoom:50%;" /></p>
+
+<p>Multi-singer 세팅에서는 G에 feature 외에 speaker identity를 추가한다. 예를 들어, speaker i의 샘플을 speaker i의 소리로 recon 했을 때와 speaker j의 소리로 recon했을 때 아래와 같이 표기한다.</p>
+
+<p><img src="/assets/img/image-20210120171837720.png" alt="image-20210120171837720" style="zoom: 50%;" /></p>
+
+<p><img src="/assets/img/image-20210120171849436.png" alt="image-20210120171849436" style="zoom:50%;" /></p>
+
+<p>speaker 를 바꿨을 때는 recon loss를 포함시키지 않는 것을 제외하면 objective는 동일하다.</p>
+
+<p><img src="/assets/img/image-20210120172450192.png" alt="image-20210120172450192" style="zoom:50%;" /></p>
+
+<p>speaker identity의 convex combination을 통해 virtual speaker를 생성했다. 이 세팅을 mixup 세팅이라고 부르는데 특별한 의미가 있는지 잘 모르겠다. 다양한 speaker에 대해 결과가 잘 나오게 하는데 도움이 될 것 같다.</p>
+
+<p><img src="/assets/img/image-20210120172658222.png" alt="image-20210120172658222" style="zoom:50%;" /></p>
+
+<p><img src="/assets/img/image-20210120172706001.png" alt="image-20210120172706001" style="zoom:50%;" /></p>
+
+<p>모델 구조는 non-causal WaveNet 기반이고, auto-regressive하지 않기 때문에 빠르다고 한다. 자세한 모델 구조에 대해서는 적지 않겠다.</p>
+
+<p><img src="/assets/img/image-20210120172903740.png" alt="image-20210120172903740" /></p>
+
+<p>결과는  https://singing-conversion.github.io/  에 여러 샘플들이 있으니 바로 들어보는게 빠른 것 같다. Speech에서 학습한 speaker identity로 conversion을 하는 내용들도 포함되어 있다.</p>
+
+<p>evaluation 결과는 아래와 같다.</p>
+
+<p><img src="/assets/img/image-20210120173951649.png" alt="image-20210120173951649" /></p>
+
+<h3 id="conclusion">conclusion</h3>
+
+<p>f</p>
+
+
+
+<div id="post_disqus" class="container">
+  <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://jc5201-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+<ul class="taxonomy__index">
+  
+  
+    <li>
+      <a href="#2021">
+        <strong>2021</strong> <span class="taxonomy__count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2020">
+        <strong>2020</strong> <span class="taxonomy__count">2</span>
+      </a>
+    </li>
+  
+    <li>
+      <a href="#2019">
+        <strong>2019</strong> <span class="taxonomy__count">1</span>
+      </a>
+    </li>
+  
+</ul>
+
+
+
+  <section id="2021" class="taxonomy__section">
+    <h2 class="archive__subtitle">2021</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20-%20audio/paper-demucs/" rel="permalink">Music Source Separation in the waveform domain
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">intro
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/" rel="permalink">Unsupervised Cross-Domain Singing Voice Conversion
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">intro
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+  <section id="2020" class="taxonomy__section">
+    <h2 class="archive__subtitle">2020</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/setting/i3-setting/" rel="permalink">ubuntu GUI setting
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">사용 환경 : virtualbox + ubuntu server 20.04 + i3 + st-luke
+</p>
+  </article>
+</div>
+
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/random/gpt-3-source-code-generation/" rel="permalink">GPT-3를 보면서 생각하는 source code generation
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">최근 OpenAI에서 GPT-3(Generative Pre-trained Transformer 3) 라는 API 와 논문을 공개했다.
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+  <section id="2019" class="taxonomy__section">
+    <h2 class="archive__subtitle">2019</h2>
+    <div class="entries-list">
+      
+        
+
+
+
+<div class="list__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="/random/test/" rel="permalink">Jekyll blog test
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="far fa-clock" aria-hidden="true"></i> 
+
+
+
+
+  less than 1 minute read
+
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">title
+content
+—–
+‘’’
+code
+‘’’
+</p>
+  </article>
+</div>
+
+      
+    </div>
+    <a href="#page-title" class="back-to-top">Back to top &uarr;</a>
+  </section>
+
+
+  </div>
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+          <li><a href="https://github.com/jc5201" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+    
+
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2021 NGD. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://kit.fontawesome.com/4eee35f757.js"></script>
+
+
+
+
+
+
+
+    
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://jc5201.github.io/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://ngd-1.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+  
+
+
+
+
+
+  </body>
+</html>
