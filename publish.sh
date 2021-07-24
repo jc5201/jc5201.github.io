@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export FILTER_BRANCH_SQUELCH_WARNING=1
+
 git branch -D pages
 git checkout -b pages
 git filter-branch --subdirectory-filter _site/ -f
