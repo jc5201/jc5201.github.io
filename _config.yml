@@ -244,7 +244,8 @@ defaults:
 
 # Scholar
 scholar:
-  style: ieee-with-url
+  style: chicago-author-date
+  # style: chicago-annotated-bibliography
   locale: en
 
   sort_by: year,author
@@ -257,15 +258,15 @@ scholar:
   bibliography_template: bib
 
   replace_strings: true
-  join_strings:    true
+  # join_strings:    true
 
-  details_dir:    bibliography
-  details_layout: bibtex.html
-  details_link:   Details
+  # details_dir:    bibliography
+  # details_layout: bibtex.html
+  # details_link:   Details
 
   query: "@*"
 
-  bibtex_filters:
-  - superscript
-  - latex
+  # bibtex_filters:
+  # - superscript
+  # - latex
   

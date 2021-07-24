@@ -13,5 +13,4 @@ Hello, I'm jaechang Kim.
 
 ## Publication
 
-<!-- {% bibliography --query @article[] %} -->
 {% bibliography %}
