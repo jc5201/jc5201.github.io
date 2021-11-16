@@ -4,11 +4,6 @@ var store = [{
         "tags": [],
         "url": "https://jc5201.github.io/random/test/",
         "teaser":null},{
-        "title": "GPT-3를 보면서 생각하는 source code generation",
-        "excerpt":"최근 OpenAI에서 GPT-3(Generative Pre-trained Transformer 3) 라는 API 와 논문을 공개했다. https://openai.com/blog/openai-api/ https://arxiv.org/pdf/2005.14165.pdf GPT-3 가 뭔지 처음 듣는 사람은 아래 데모 영상들을 보고 오자. https://machinelearningtokyo.com/2020/07/26/10-cool-gpt-3-demos/ GPT-3 는 openAI에서 돈이 필요해서 유료로 판다고 한다. 뭐 모델이 좀 많이 커서 앵간한 회사들은 돌리지도 못할 거라고 하긴 한다. 일단 성능이 상당히 좋아서 관심을...","categories": ["random"],
-        "tags": [],
-        "url": "https://jc5201.github.io/random/gpt-3-source-code-generation/",
-        "teaser":null},{
         "title": "ubuntu GUI setting",
         "excerpt":"사용 환경 : virtualbox + ubuntu server 20.04 + i3 + st-luke i3 순정 i3를 쓸 거면 apt 사용해서 그냥 설치하면 된다. sudo apt install i3 난 i3-gaps를 쓸 것이기 때문에 i3-gaps를 빌드해서 설치했고, 다음 페이지를 참고했다. https://dymaxionkim.github.io/beautiful-jekyll/2019-06-20-rounded-i3-gaps-on-ubuntu/ https://gist.github.com/boreycutts/6417980039760d9d9dac0dd2148d4783 i3 설정은 ~/.config/i3/config 에서 하면 된다. st-luke 디폴트로 깔려있는 터미널 쓰기...","categories": ["setting"],
         "tags": [],
