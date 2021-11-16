@@ -245,7 +245,7 @@ defaults:
 
 # Scholar
 scholar:
-  style: chicago-author-date
+  style: ieee
   # style: chicago-annotated-bibliography
   locale: en
 

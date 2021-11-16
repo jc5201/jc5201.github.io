@@ -3,7 +3,7 @@ layout: home
 author_profile: true
 ---
 
-Hello, I'm jaechang Kim.
+Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/).
 
 ## Research Interest
 
