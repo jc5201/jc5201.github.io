@@ -35,5 +35,9 @@ Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.po
 
 <!-- ## Awards
 
-* 글로벌 핵심인재 양성지원 사업 우수성과 (우수상) (2021, IITP) -->
+* 글로벌 핵심인재 양성지원 사업 우수성과 (우수상) (2021, IITP) 
+
+* 2021학년도 인공지능대학원 대학원생 우수논문상 (최우수상) (2021, POSTECH AIGS) 
+
+-->
 
