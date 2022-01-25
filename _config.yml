@@ -245,8 +245,8 @@ defaults:
 
 # Scholar
 scholar:
-  style: ieee
-  # style: chicago-annotated-bibliography
+  # style: ieee
+  style: european-journal-of-theology
   locale: en
 
   sort_by: year,author
