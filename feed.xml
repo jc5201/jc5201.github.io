@@ -1,4 +1,216 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jaechang.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaechang.dev/" rel="alternate" type="text/html" /><updated>2022-06-22T14:50:17+09:00</updated><id>https://jaechang.dev/feed.xml</id><title type="html">NGD’s blog</title><subtitle></subtitle><author><name>Jaechang Kim</name><email>jaechang@postech.ac.kr</email></author><entry><title type="html">Music Source Separation in the waveform domain</title><link href="https://jaechang.dev/paper%20-%20audio/paper-demucs/" rel="alternate" type="text/html" title="Music Source Separation in the waveform domain" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>https://jaechang.dev/paper%20-%20audio/paper-demucs</id><content type="html" xml:base="https://jaechang.dev/paper%20-%20audio/paper-demucs/">&lt;h3 id=&quot;intro&quot;&gt;intro&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.0">Jekyll</generator><link href="https://jaechang.dev/feed.xml" rel="self" type="application/atom+xml" /><link href="https://jaechang.dev/" rel="alternate" type="text/html" /><updated>2022-06-22T21:04:40+09:00</updated><id>https://jaechang.dev/feed.xml</id><title type="html">NGD’s blog</title><subtitle></subtitle><author><name>Jaechang Kim</name><email>jaechang@postech.ac.kr</email></author><entry><title type="html">ICASSP 2022 - Source Separation</title><link href="https://jaechang.dev/paper%20-%20audio/icassp-2022/" rel="alternate" type="text/html" title="ICASSP 2022 - Source Separation" /><published>2022-06-01T00:00:00+09:00</published><updated>2022-06-01T00:00:00+09:00</updated><id>https://jaechang.dev/paper%20-%20audio/icassp-2022</id><content type="html" xml:base="https://jaechang.dev/paper%20-%20audio/icassp-2022/">&lt;h3 id=&quot;this-is-a-brief-scan-for-icassp-papers-searched-with-source-separation-not-all-papers&quot;&gt;This is a brief scan for ICASSP papers, searched with “source separation” (not all papers).&lt;/h3&gt;
+
+&lt;p&gt;Personal opinions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Still the most prevailing baselines seem to be ConvTasnet and demucs.&lt;/li&gt;
+  &lt;li&gt;Multi domain(?) problems are defined from mixtures of speech, music, and others&lt;/li&gt;
+  &lt;li&gt;Spatial information is started to be used&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;spatialmulti-channel&quot;&gt;Spatial/multi-channel&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746277/&quot;&gt;Spain-Net: Spatially-Informed Stereophonic Music Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;spatial data + instrument-specific features&lt;/li&gt;
+      &lt;li&gt;separation of same-class instruments&lt;/li&gt;
+      &lt;li&gt;spatial condition (angle) as input of separation system&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746950/&quot;&gt;An End-to-End Deep Learning Framework For Multiple Audio Source Separation And Localization&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Estimate sources and TDOA(time differences of arrival) jointly&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/01.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747604/&quot;&gt;Locate This, Not that: Class-Conditioned Sound Event DOA Estimation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;DOA(direction of arrival) estimation&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/02.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;multi-domaintask&quot;&gt;Multi-domain/task&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746005/&quot;&gt;The Cocktail Fork Problem: Three-Stem Audio Separation for Real-World Soundtracks&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;mixture of music, sppech, and sound effects&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747830/&quot;&gt;EAD-Conformer: a Conformer-Based Encoder-Attention-Decoder-Network for Multi-Task Audio Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;multi-task := speech, music, noise, …&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746947/&quot;&gt;A Multi-Task Learning Method for Weakly Supervised Sound Event Detection&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;multi-task learning := sound event detection and source separation&lt;/li&gt;
+      &lt;li&gt;supervised for separation and weakly labeled for event detection (only event type)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;unsupervisedweak-sup&quot;&gt;Unsupervised/weak-sup&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747202/&quot;&gt;Improving Bird Classification with Unsupervised Sound Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;MixIT for birdsong data&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747855/&quot;&gt;Adapting Speech Separation to Real-World Meetings using Mixture Invariant Training&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;MixIT for meeting data (long, noisy)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747722/&quot;&gt;Category-Adapted Sound Event Enhancement with Weakly Labeled Data&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;weakly labeled : presence and location or sources&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/03.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;lossmetric&quot;&gt;Loss/metric&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746530/&quot;&gt;On Loss Functions and Evaluation Metrics for Music Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;correlation between loss and metric (lower is better)&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/04.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747473/&quot;&gt;SDR — Medium Rare with Fast Computations&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;an efficient implementation of old library containing evaluation metrics&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746757/&quot;&gt;SA-SDR: A Novel Loss Function for Separation of Meeting Style Data&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;SDR is undefined for perfect matches and silence signal&lt;/li&gt;
+      &lt;li&gt;source-aggregated SDR : robust against silence and perfect reconsturction&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746662/&quot;&gt;Real-M: Towards Speech Separation on Real Mixtures&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;dataset(corpus) of real-life mixtures&lt;/li&gt;
+      &lt;li&gt;performance evaluation where the ground truth is not available&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;pairing-unpaired-mixtures-related-to-pit&quot;&gt;Pairing unpaired mixtures (related to PIT)&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747141/&quot;&gt;Location-Based Training for Multi-Channel Talker-Independent Speaker Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;angle and distance based training&lt;/li&gt;
+      &lt;li&gt;Sort by angle/distance instead of permutation matrix of PIT&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746439/&quot;&gt;Attentionpit: Soft Permutation Invariant Training for Audio Source Separation with Attention Mechanism&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;attention based pairing&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;other-interesting-topics&quot;&gt;Other interesting topics&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746077/&quot;&gt;Don’t Separate, Learn To Remix: End-To-End Neural Remixing With Joint Optimization&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;remixing := src1 + src2 → 0.9src1 + 0.5src2&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/05.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747536/&quot;&gt;Few-Shot Musical Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Encode examples into conditioning vector&lt;/li&gt;
+      &lt;li&gt;similar to query-by-example&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747909/&quot;&gt;Source Separation By Steering Pretrained Music Models&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;similar to GAN inversion&lt;/li&gt;
+      &lt;li&gt;optimize latent vectors based on pretrained models&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746486/&quot;&gt;Amicable Examples for Informed Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;pre-trained model + improvement by side-information&lt;/li&gt;
+      &lt;li&gt;adversarial attack to improve the separation(?)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747076/&quot;&gt;Improving Source Separation by Explicitly Modeling Dependencies between Sources&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;correlation/dependencies (chord, rhythm, …)&lt;/li&gt;
+      &lt;li&gt;Orderless Neural Autoregressive Density Estimator&lt;/li&gt;
+      &lt;li&gt;additional waveform inputs for conditioning&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/06.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;⭐&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746022/&quot;&gt;Selective Mutual Learning: An Efficient Approach for Single Channel Speech Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Selective mutual learning : two networks share only high-confidence predictions&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/07.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747709/&quot;&gt;Blind Source Separation via a Weak Exclusion Principle&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;exclusion : only one source exists at each time point/pixel&lt;/li&gt;
+      &lt;li&gt;problem: source separation&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/08.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;???&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/09.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747851/&quot;&gt;Coarray Manifold Separation In The Spherical Harmonics Domain For Enhanced Source Localization&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;To enforce source localization performance from spherical sensor array,
+  provide virtual coarray sensors&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/10.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747554/&quot;&gt;TFPSNet: Time-Frequency Domain Path Scanning Network for Speech Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;new network&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9747771/&quot;&gt;Multi-Channel Speaker Verification with Conv-Tasnet Based Beamformer&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;alternative way of predicting Spatial Covariance Matrices&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746980/&quot;&gt;Investigation And Comparison of Optimization Methods for Variational Autoencoder-Based Underdetermined Multichannel Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;underdetermined, mutichannel algorithms : GMVAE(?)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9746073/&quot;&gt;HBP: An Efficient Block Permutation Solver Using Hungarian Algorithm and Spectrogram Inpainting for Multichannel Audio Source Separation&lt;/a&gt;&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;block permutation algorithm to solve permutation inconsistencies&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;img src=&quot;/assets/img/2022-06-01-icassp-2022/11.png&quot; alt=&quot;Untitled&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Jaechang Kim</name><email>jaechang@postech.ac.kr</email></author><category term="paper - audio" /><summary type="html">This is a brief scan for ICASSP papers, searched with “source separation” (not all papers).</summary></entry><entry><title type="html">Music Source Separation in the waveform domain</title><link href="https://jaechang.dev/paper%20-%20audio/paper-demucs/" rel="alternate" type="text/html" title="Music Source Separation in the waveform domain" /><published>2021-02-05T00:00:00+09:00</published><updated>2021-02-05T00:00:00+09:00</updated><id>https://jaechang.dev/paper%20-%20audio/paper-demucs</id><content type="html" xml:base="https://jaechang.dev/paper%20-%20audio/paper-demucs/">&lt;h3 id=&quot;intro&quot;&gt;intro&lt;/h3&gt;
 
 &lt;p&gt;facebook ai 쪽에 있는 defossez라는 아저씨 논문이다.&lt;/p&gt;
 

@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Unsupervised Cross-Domain Singing Voice Conversion - NGD’s blog</title>
-<meta name="description" content="intro">
+<!-- begin _includes/seo.html --><title>ICASSP 2022 - Source Separation - NGD’s blog</title>
+<meta name="description" content="This is a brief scan for ICASSP papers, searched with “source separation” (not all papers).">
 
 
   <meta name="author" content="Jaechang Kim">
@@ -19,30 +19,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="NGD's blog">
-<meta property="og:title" content="Unsupervised Cross-Domain Singing Voice Conversion">
-<meta property="og:url" content="https://jaechang.dev/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/">
+<meta property="og:title" content="ICASSP 2022 - Source Separation">
+<meta property="og:url" content="https://jaechang.dev/paper%20-%20audio/icassp-2022/">
 
 
-  <meta property="og:description" content="intro">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-01-20T00:00:00+09:00">
+  <meta property="og:description" content="This is a brief scan for ICASSP papers, searched with “source separation” (not all papers).">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-06-01T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="https://jaechang.dev/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/">
+
+<link rel="canonical" href="https://jaechang.dev/paper%20-%20audio/icassp-2022/">
 
 
 
@@ -296,80 +296,221 @@
 
   <div class="archive">
     
-      <h1 id="page-title" class="page__title">Unsupervised Cross-Domain Singing Voice Conversion</h1>
+      <h1 id="page-title" class="page__title">ICASSP 2022 - Source Separation</h1>
     
-    <h3 id="intro">intro</h3>
+    <h3 id="this-is-a-brief-scan-for-icassp-papers-searched-with-source-separation-not-all-papers">This is a brief scan for ICASSP papers, searched with “source separation” (not all papers).</h3>
 
-<p>facebook ai 쪽 논문이고, timbre transfer 관련이라고 보면 될 것 같다.</p>
+<p>Personal opinions:</p>
 
-<p>처음에 학습 시킬 때 speaker identity에 따라 다른 timbre를 표현하게 학습시키고, 이후에 다른 목소리를 표현하고 싶으면 그 목소리와 비슷한 speaker identity를 찾는 모델이다.</p>
+<ul>
+  <li>Still the most prevailing baselines seem to be ConvTasnet and demucs.</li>
+  <li>Multi domain(?) problems are defined from mixtures of speech, music, and others</li>
+  <li>Spatial information is started to be used</li>
+</ul>
 
-<p>speaker identity를 찾는 과정은 speech 데이터에서도 찾을 수 있고, 상대적으로 적은 데이터로 할 수 있다.</p>
+<h2 id="spatialmulti-channel">Spatial/multi-channel</h2>
 
-<p>GAN 에서 G에 condition을 다양하게 줘서 노래에 대한 정보나 speaker에 대한 정보를 넘겨주고, 소리를 생성하게 하는 모델을 사용한다.</p>
+<ul>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746277/">Spain-Net: Spatially-Informed Stereophonic Music Source Separation</a></strong>
+    <ul>
+      <li>spatial data + instrument-specific features</li>
+      <li>separation of same-class instruments</li>
+      <li>spatial condition (angle) as input of separation system</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746950/">An End-to-End Deep Learning Framework For Multiple Audio Source Separation And Localization</a></strong>
+    <ul>
+      <li>Estimate sources and TDOA(time differences of arrival) jointly</li>
+    </ul>
 
-<h3 id="content">content</h3>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/01.png" alt="Untitled" /></p>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747604/">Locate This, Not that: Class-Conditioned Sound Event DOA Estimation</a></strong>
+    <ul>
+      <li>DOA(direction of arrival) estimation</li>
+    </ul>
 
-<p>singing voice conversion 은 input으로 들어온 노래를 다른 사람의 목소리로 reproduce 하는 문제다. 이 논문의 결과는 https://singing-conversion.github.io/ 에서 들어볼 수 있다. 각 데이터에는 사람 1명의 목소리만 있다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/02.png" alt="Untitled" /></p>
+  </li>
+</ul>
 
-<p>GAN을 사용하면서 G 에 parameter로 여러 가지를 넘겨주는데, speaker-invariant feature들과 speaker identity다.</p>
+<h2 id="multi-domaintask">Multi-domain/task</h2>
 
-<p>speaker-invariant feature 로는 loudness, f0를 사용한다. loudness는 log-scaled power spectrum을 사용하고, f0는 CREPE를 사용해서 추출한다. f0를 그대로 사용하면 생성된 소리의 pitch가 불안정해서 single sinusoid sine-exitation $\Gamma (f_{crepe}(x))$ 를 사용한다. Speech의 경우 Wav2Letter라는 음성인식 쪽 모델을 가져와서 추가로 사용한다.</p>
+<ul>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746005/">The Cocktail Fork Problem: Three-Stem Audio Separation for Real-World Soundtracks</a></strong>
+    <ul>
+      <li>mixture of music, sppech, and sound effects</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747830/">EAD-Conformer: a Conformer-Based Encoder-Attention-Decoder-Network for Multi-Task Audio Source Separation</a></strong>
+    <ul>
+      <li>multi-task := speech, music, noise, …</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746947/">A Multi-Task Learning Method for Weakly Supervised Sound Event Detection</a></strong>
+    <ul>
+      <li>multi-task learning := sound event detection and source separation</li>
+      <li>supervised for separation and weakly labeled for event detection (only event type)</li>
+    </ul>
+  </li>
+</ul>
 
-<p>Speaker identity에 관해서는 논문에 자세히 나와있지는 않은데 <a href="https://arxiv.org/abs/1904.06590">이전 논문</a> 을 참고했을 때 embedding 으로 이해하면 될 것 같다.</p>
+<h2 id="unsupervisedweak-sup">Unsupervised/weak-sup</h2>
 
-<p>모델은 기본적으로 Least-squares GAN 을 따르고 있다. 학습 목표는 크게 두 가지로 나누는데, single singer objective function 세팅과 multi-singer 세팅이다.</p>
+<ul>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747202/">Improving Bird Classification with Unsupervised Sound Separation</a></strong>
+    <ul>
+      <li>MixIT for birdsong data</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747855/">Adapting Speech Separation to Real-World Meetings using Mixture Invariant Training</a></strong>
+    <ul>
+      <li>MixIT for meeting data (long, noisy)</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747722/">Category-Adapted Sound Event Enhancement with Weakly Labeled Data</a></strong>
+    <ul>
+      <li>weakly labeled : presence and location or sources</li>
+    </ul>
 
-<p>Single singer objective function 의 아래와 같다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/03.png" alt="Untitled" /></p>
+  </li>
+</ul>
 
-<p><img src="/assets/img/image-20210120170012346.png" alt="image-20210120170012346" style="zoom:50%;" /></p>
+<h2 id="lossmetric">Loss/metric</h2>
 
-<p><img src="/assets/img/image-20210120170027904.png" alt="image-20210120170027904" style="zoom:50%;" /></p>
+<ul>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9746530/">On Loss Functions and Evaluation Metrics for Music Source Separation</a></strong>
+    <ul>
+      <li>correlation between loss and metric (lower is better)</li>
+    </ul>
 
-<p>G의 objective는 여러 loss의 합으로 표현되어 있는데, adv loss 는 GAN에서 일반적으로 사용하는 objective로 볼 수 있다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/04.png" alt="Untitled" /></p>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747473/">SDR — Medium Rare with Fast Computations</a></strong>
+    <ul>
+      <li>an efficient implementation of old library containing evaluation metrics</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746757/">SA-SDR: A Novel Loss Function for Separation of Meeting Style Data</a></strong>
+    <ul>
+      <li>SDR is undefined for perfect matches and silence signal</li>
+      <li>source-aggregated SDR : robust against silence and perfect reconsturction</li>
+    </ul>
+  </li>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9746662/">Real-M: Towards Speech Separation on Real Mixtures</a></strong>
+    <ul>
+      <li>dataset(corpus) of real-life mixtures</li>
+      <li>performance evaluation where the ground truth is not available</li>
+    </ul>
+  </li>
+</ul>
 
-<p><img src="/assets/img/image-20210120170501191.png" alt="image-20210120170501191" style="zoom:50%;" /></p>
+<h2 id="pairing-unpaired-mixtures-related-to-pit">Pairing unpaired mixtures (related to PIT)</h2>
 
-<p>recon loss는 $\hat{x}$ 이 x를 얼마나 잘 reconstruciton 했는지 비교하는 것으로, multi-scale spectral loss를 사용한다. 아래 식에서 F 는 Frobenius norm인데, l2 norm이다. 첫 번째 term이 spectral peak 를 표현하고, 두 번째 term이 소리의 silent section에 대한 penalty라고 한다. 두 번째 term이 어떻게 그런 의미를 갖는지는 잘 모르겠다.</p>
+<ul>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747141/">Location-Based Training for Multi-Channel Talker-Independent Speaker Separation</a></strong>
+    <ul>
+      <li>angle and distance based training</li>
+      <li>Sort by angle/distance instead of permutation matrix of PIT</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746439/">Attentionpit: Soft Permutation Invariant Training for Audio Source Separation with Attention Mechanism</a></strong>
+    <ul>
+      <li>attention based pairing</li>
+    </ul>
+  </li>
+</ul>
 
-<p><img src="/assets/img/image-20210120170921416.png" alt="image-20210120170921416" style="zoom:50%;" /></p>
+<h2 id="other-interesting-topics">Other interesting topics</h2>
 
-<p><img src="/assets/img/image-20210120171248978.png" alt="image-20210120171248978" style="zoom:50%;" /></p>
+<ul>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9746077/">Don’t Separate, Learn To Remix: End-To-End Neural Remixing With Joint Optimization</a></strong>
+    <ul>
+      <li>remixing := src1 + src2 → 0.9src1 + 0.5src2</li>
+    </ul>
 
-<p>나머지 두 loss는 생성된 소리의 quality를 위한 부분이고, feature extractor로 사용한 모델들의 중간 layer의 activation을 사용한다. perceptual loss의 아이디어를 가져온 것 같다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/05.png" alt="Untitled" /></p>
+  </li>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9747536/">Few-Shot Musical Source Separation</a></strong>
+    <ul>
+      <li>Encode examples into conditioning vector</li>
+      <li>similar to query-by-example</li>
+    </ul>
+  </li>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9747909/">Source Separation By Steering Pretrained Music Models</a></strong>
+    <ul>
+      <li>similar to GAN inversion</li>
+      <li>optimize latent vectors based on pretrained models</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746486/">Amicable Examples for Informed Source Separation</a></strong>
+    <ul>
+      <li>pre-trained model + improvement by side-information</li>
+      <li>adversarial attack to improve the separation(?)</li>
+    </ul>
+  </li>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9747076/">Improving Source Separation by Explicitly Modeling Dependencies between Sources</a></strong>
+    <ul>
+      <li>correlation/dependencies (chord, rhythm, …)</li>
+      <li>Orderless Neural Autoregressive Density Estimator</li>
+      <li>additional waveform inputs for conditioning</li>
+    </ul>
 
-<p><img src="/assets/img/image-20210120171455546.png" alt="image-20210120171455546" style="zoom:50%;" /></p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/06.png" alt="Untitled" /></p>
+  </li>
+  <li>⭐<strong><a href="https://ieeexplore.ieee.org/document/9746022/">Selective Mutual Learning: An Efficient Approach for Single Channel Speech Separation</a></strong>
+    <ul>
+      <li>Selective mutual learning : two networks share only high-confidence predictions</li>
+    </ul>
 
-<p>Multi-singer 세팅에서는 G에 feature 외에 speaker identity를 추가한다. 예를 들어, speaker i의 샘플을 speaker i의 소리로 recon 했을 때와 speaker j의 소리로 recon했을 때 아래와 같이 표기한다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/07.png" alt="Untitled" /></p>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747709/">Blind Source Separation via a Weak Exclusion Principle</a></strong>
+    <ul>
+      <li>exclusion : only one source exists at each time point/pixel</li>
+      <li>problem: source separation</li>
+    </ul>
 
-<p><img src="/assets/img/image-20210120171837720.png" alt="image-20210120171837720" style="zoom: 50%;" /></p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/08.png" alt="Untitled" /></p>
 
-<p><img src="/assets/img/image-20210120171849436.png" alt="image-20210120171849436" style="zoom:50%;" /></p>
+    <ul>
+      <li>???</li>
+    </ul>
 
-<p>speaker 를 바꿨을 때는 recon loss를 포함시키지 않는 것을 제외하면 objective는 동일하다.</p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/09.png" alt="Untitled" /></p>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747851/">Coarray Manifold Separation In The Spherical Harmonics Domain For Enhanced Source Localization</a></strong>
+    <ul>
+      <li>To enforce source localization performance from spherical sensor array,
+  provide virtual coarray sensors</li>
+    </ul>
 
-<p><img src="/assets/img/image-20210120172450192.png" alt="image-20210120172450192" style="zoom:50%;" /></p>
+    <p><img src="/assets/img/2022-06-01-icassp-2022/10.png" alt="Untitled" /></p>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747554/">TFPSNet: Time-Frequency Domain Path Scanning Network for Speech Separation</a></strong>
+    <ul>
+      <li>new network</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9747771/">Multi-Channel Speaker Verification with Conv-Tasnet Based Beamformer</a></strong>
+    <ul>
+      <li>alternative way of predicting Spatial Covariance Matrices</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746980/">Investigation And Comparison of Optimization Methods for Variational Autoencoder-Based Underdetermined Multichannel Source Separation</a></strong>
+    <ul>
+      <li>underdetermined, mutichannel algorithms : GMVAE(?)</li>
+    </ul>
+  </li>
+  <li><strong><a href="https://ieeexplore.ieee.org/document/9746073/">HBP: An Efficient Block Permutation Solver Using Hungarian Algorithm and Spectrogram Inpainting for Multichannel Audio Source Separation</a></strong>
+    <ul>
+      <li>block permutation algorithm to solve permutation inconsistencies</li>
+    </ul>
 
-<p>speaker identity의 convex combination을 통해 virtual speaker를 생성했다. 이 세팅을 mixup 세팅이라고 부르는데 특별한 의미가 있는지 잘 모르겠다. 다양한 speaker에 대해 결과가 잘 나오게 하는데 도움이 될 것 같다.</p>
-
-<p><img src="/assets/img/image-20210120172658222.png" alt="image-20210120172658222" style="zoom:50%;" /></p>
-
-<p><img src="/assets/img/image-20210120172706001.png" alt="image-20210120172706001" style="zoom:50%;" /></p>
-
-<p>모델 구조는 non-causal WaveNet 기반이고, auto-regressive하지 않기 때문에 빠르다고 한다. 자세한 모델 구조에 대해서는 적지 않겠다.</p>
-
-<p><img src="/assets/img/image-20210120172903740.png" alt="image-20210120172903740" /></p>
-
-<p>결과는  https://singing-conversion.github.io/  에 여러 샘플들이 있으니 바로 들어보는게 빠른 것 같다. Speech에서 학습한 speaker identity로 conversion을 하는 내용들도 포함되어 있다.</p>
-
-<p>evaluation 결과는 아래와 같다.</p>
-
-<p><img src="/assets/img/image-20210120173951649.png" alt="image-20210120173951649" /></p>
-
-<h3 id="conclusion">conclusion</h3>
-
-<p>f</p>
-
+    <p><img src="/assets/img/2022-06-01-icassp-2022/11.png" alt="Untitled" /></p>
+  </li>
+</ul>
 
 
 <div id="post_disqus" class="container">
@@ -451,7 +592,7 @@ s.setAttribute('data-timestamp', +new Date());
 
 
 
-  3 minute read
+  2 minute read
 
 </p>
     
@@ -658,8 +799,8 @@ code
     
   <script>
     var disqus_config = function () {
-      this.page.url = "https://jaechang.dev/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/";  // Replace PAGE_URL with your page's canonical URL variable
-      this.page.identifier = "/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = "https://jaechang.dev/paper%20-%20audio/icassp-2022/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/paper%20-%20audio/icassp-2022"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
       var d = document, s = d.createElement('script');
