@@ -5,19 +5,23 @@ author_profile: true
 
 Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/).
 
+
 ## Research Interest
+
+I treat machine learning as a method to solve under-determined problems by learning priors from data.
+I'm interested in applications of machine learning and explaining how it is working.
 
 * Source Separation
 * Machine Learning Applications in sound domain
 * GAN Inversion
-* Privacy in Federated Learning
+* Explaininable AI
 
 ## Publication
 
-### international
+### major conferences
 {% bibliography --file references %}
 
-### domestic
+### domestic conferences
 {% bibliography --file domestic %}
 
 ## Education
@@ -28,7 +32,8 @@ Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.po
 ## Work Experience
 
 * Internship in Naver Corp (2020.07 ~ 2020.08)
-* intern with Prof. Sungwoo Park (2019.05 ~ 2019.10)
+
+* Internship with Prof. Sungwoo Park (2019.05 ~ 2019.10)
     [https://www.datamonad.com/](https://www.datamonad.com/)
 
 * Internship in Netmarble AI Revolution Center (2018.06 ~ 2018.08)
