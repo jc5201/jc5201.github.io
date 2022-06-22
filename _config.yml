@@ -88,9 +88,9 @@ author:
   linkedin         : "jaechang-kim-15454414b"
   github           : "jc5201"
   links:
-    # - label: "GitHub"
-    #   icon: "fab fa-fw fa-github"
-    #   url: "https://github.com/jc5201"
+    - label: "Google Scholar"
+      # icon: "fa fa-scholar fa-xs"
+      url: "https://scholar.google.com/citations?user=WBJWwzYAAAAJ&hl=ko"
 
 # Site Footer
 footer:
