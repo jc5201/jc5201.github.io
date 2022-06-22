@@ -253,7 +253,7 @@ scholar:
   order: descending,ascending
   bibliography_list_tag: ul
 
-  source: ./bibliography
+  source: _bibliography
   repository: pdf
   bibliography: references.bib
   bibliography_template: bib

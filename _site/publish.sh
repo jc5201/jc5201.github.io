@@ -2,8 +2,8 @@
 
 export FILTER_BRANCH_SQUELCH_WARNING=1
 
-git branch -D pages
-git checkout -b pages
+git branch -D gh-pages
+git checkout -b gh-pages
 git filter-branch --subdirectory-filter _site/ -f
 git reflog expire --expire=now --all
 git gc --prune=now
