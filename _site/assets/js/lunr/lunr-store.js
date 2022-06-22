@@ -18,4 +18,9 @@ var store = [{
         "excerpt":"intro facebook ai 쪽에 있는 defossez라는 아저씨 논문이다. Demucs 라고 다른 논문들에서 baseline으로 주로 제시되는 모델 중 하나인데 publish된 적은 없는 것 같다. 데모부터 들어보면 상당히 괜찮은 결과를 보여준다. https://ai.honu.io/papers/demucs/index.html 작년에 wave u net 가지고 씨름하지 말고 이 모델을 바로 시도했으면 어땠을까 싶다. content 푸는 문제는 전형적인 music source separation...","categories": ["paper - audio"],
         "tags": [],
         "url": "https://jaechang.dev/paper%20-%20audio/paper-demucs/",
+        "teaser":null},{
+        "title": "ICASSP 2022 - Source Separation",
+        "excerpt":"This is a brief scan for ICASSP papers, searched with “source separation” (not all papers). Personal opinions: Still the most prevailing baselines seem to be ConvTasnet and demucs. Multi domain(?) problems are defined from mixtures of speech, music, and others Spatial information is started to be used Spatial/multi-channel Spain-Net: Spatially-Informed...","categories": ["paper - audio"],
+        "tags": [],
+        "url": "https://jaechang.dev/paper%20-%20audio/icassp-2022/",
         "teaser":null}]
