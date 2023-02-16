@@ -29,6 +29,11 @@ I'm interested in applications of machine learning and explaining how it is work
 * Ph.D. in POSTECH Graduate School of Artificial Intelligence (2021 ~ )
 * B.S. in POSTECH Department of Computer Science & Engineering (2016 ~ 2021)
 
+## Teaching
+
+* Computer Architecture (TA, 2023 Spring)
+* Intro. to Computer SW Systems (TA, 2022 Fall)
+
 ## Work Experience
 
 * Internship in Naver Corp (2020.07 ~ 2020.08)
