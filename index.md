@@ -6,16 +6,11 @@ author_profile: true
 Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/) since 2021.
 
 
-## Research Interest
+<!-- ## Research Interest -->
 
-I treat machine learning as a method to solve under-determined problems by learning priors from data.
-I'm interested in applications of machine learning and 
-reasoning how a neural network is working.
-
-* Source Separation
-* Machine Learning Applications in sound domain
-* Trustworthy AI
-* Reasoning in ML
+My research interests are diverse, focusing on these two directions.
+* Trustworthy Machine Learning: explaining a rationale behind a ML model decision, and transterring the knowledge to human
+* Diverse Machine Learning application, such as automated theorem proving, sound source separation, ...
 
 ## Publication
 
@@ -41,6 +36,7 @@ reasoning how a neural network is working.
     [https://www.datamonad.com/](https://www.datamonad.com/)
 
 * Internship in Netmarble AI Revolution Center (2018.06 ~ 2018.08)
+
 
 <!--
 
