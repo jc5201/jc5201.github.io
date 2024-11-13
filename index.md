@@ -8,7 +8,7 @@ Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.po
 
 <!-- ## Research Interest -->
 
-My research interests are diverse, focusing on these two directions.
+My research interests are diverse, focusing on these two directions:
 * Trustworthy Machine Learning: explaining a rationale behind a ML model decision, and transterring the knowledge to human
 * Diverse Machine Learning application, such as automated theorem proving, sound source separation, ...
 
