@@ -3,10 +3,8 @@ layout: home
 author_profile: true
 ---
 
-Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/) since 2021.
-
-
-<!-- ## Research Interest -->
+Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/) since 2021,
+under supervision of [Jungseul Ok](https://sites.google.com/view/jungseulok).
 
 My research interests are diverse, focusing on these two directions:
 * Trustworthy Machine Learning: explaining a rationale behind a ML model decision, and transterring the knowledge to human

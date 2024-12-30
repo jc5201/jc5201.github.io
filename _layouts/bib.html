@@ -1,40 +1,14 @@
 ---
 layout: bib
 ---
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
 {{ reference | replace_first: 'Jaechang Kim', '<b>Jaechang Kim</b>' }}
 
-<!-- Shields -->
-<!-- {% if entry.beta %} -->
-<!-- <a href="{{ entry.repo }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="https://img.shields.io/badge/dev-beta-red.svg"></a> -->
-<!-- {% endif %} -->
-<!-- {% if entry.buildstatus %} -->
-<!-- {% assign shield = entry.buildstatus | split: "; " %} -->
-<!-- <a href="{{ shield[1] }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="{{ shield[0] }}"></a> -->
-<!-- {% endif %} -->
-<!-- {% if entry.release %} -->
-<!-- <a href="{{ entry.repo }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="{{ entry.release }}"></a> -->
-<!-- {% endif %} -->
-<!-- {% if entry.cranbadge %} -->
-<!-- {% assign shield = entry.cranbadge | split: "; " %} -->
-<!-- <a href="{{ shield[1] }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="{{ shield[0] }}"></a> -->
-<!-- {% endif %} -->
-<!-- {% if entry.pypibadge %} -->
-<!-- {% assign shield = entry.pypibadge | split: "; " %} -->
-<!-- <a href="{{ shield[1] }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="{{ shield[0] }}"></a> -->
-<!-- {% endif %} -->
-<!-- {% if entry.manual %} -->
-<!-- <a href="{{ entry.manual }}" style="margin: 0 0.1em;"> -->
-<!--   <img src="https://img.shields.io/readthedocs/pip/stable.svg"></a> -->
-<!-- {% endif %} -->
 
 <!-- Published paper icon -->
 {% if entry.link %}
-<a href="{{ entry.link }}" class="iconlink" style="margin-left: 1.5em;">
-  <i class="fas fa-link" title="Link to published version"></i></a>
+<a href="{{entry.link}}" class="fa-solid fa-link" style="margin-left: 0.5em;">
+  <!-- <i class="fa-solid fa-link"></i> -->
+</a>
 {% endif %}
