@@ -3,14 +3,17 @@ layout: home
 author_profile: true
 ---
 
-Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH ML Lab](http://ml.postech.ac.kr/) since 2021,
-under supervision of [Jungseul Ok](https://sites.google.com/view/jungseulok).
+Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH Machine Learning Lab](http://ml.postech.ac.kr/) since 2021,
+under supervision of Prof. [Jungseul Ok](https://sites.google.com/view/jungseulok).
 
-My research interests are diverse, focusing on these two directions:
-* Trustworthy Machine Learning: explaining a rationale behind a ML model decision, and transterring the knowledge to human
-* Diverse Machine Learning application, such as automated theorem proving, sound source separation, ...
+My current research focuses primarily on leveraging Large Language Models (LLMs) to enhance explainable AI. I explore how the reasoning and linguistic capabilities of LLMs can help interpret complex models and facilitate knowledge extraction. Besides this core direction, my broader research interests include:
 
-## Publication
+* Trustworthy Machine Learning: Developing methods to explain the rationale behind machine learning model decisions and effectively transfer this knowledge to humans.
+
+* Diverse ML Applications: Investigating a variety of applications, such as automated theorem proving and sound source separation.
+
+
+## Publication (you may check [here](https://scholar.google.com/citations?user=WBJWwzYAAAAJ&hl=ko))
 
 ### pre-print
 {% bibliography --file preprint %}
@@ -28,7 +31,7 @@ My research interests are diverse, focusing on these two directions:
 
 ## Work Experience
 
-* Internship in Naver Corp (2020.07 ~ 2020.08)
+* Internship in Naver (2020.07 ~ 2020.08)
 
 * Internship with Prof. Sungwoo Park (2019.05 ~ 2019.10)
     [https://www.datamonad.com/](https://www.datamonad.com/)
@@ -46,7 +49,6 @@ My research interests are diverse, focusing on these two directions:
 ## Awards
 
 * 글로벌 핵심인재 양성지원 사업 우수성과 (우수상) (2021, IITP) 
-
 * 2021학년도 인공지능대학원 대학원생 우수논문상 (최우수상) (2021, POSTECH AIGS) 
 
 -->
