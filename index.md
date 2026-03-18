@@ -10,6 +10,8 @@ My current research focuses primarily on leveraging Large Language Models (LLMs)
 
 * Trustworthy Machine Learning: Developing methods to explain the rationale behind machine learning model decisions and effectively transfer this knowledge to humans.
 
+* Human-AI Collaboration for Research: Leveraging research productivity with AI.
+
 * Diverse ML Applications: Investigating a variety of applications, such as automated theorem proving and sound source separation.
 
 
@@ -30,6 +32,8 @@ My current research focuses primarily on leveraging Large Language Models (LLMs)
 * B.S. in POSTECH Department of Computer Science & Engineering (2016 ~ 2021)
 
 ## Work Experience
+
+* Instenship in Sony Global Corporation (2025.10 ~ 2026.02)
 
 * Internship in Naver (2020.07 ~ 2020.08)
 
