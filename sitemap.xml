@@ -1,33 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     
-    <url>
-        <loc>https://jaechang.dev/paper%20-%20audio/icassp-2022/</loc>
-    </url>
-    
-    <url>
-        <loc>https://jaechang.dev/paper%20-%20audio/paper-demucs/</loc>
-    </url>
-    
-    <url>
-        <loc>https://jaechang.dev/paper%20-%20audio/paper-Unsupervised-Cross-Domain-Singing-Voice-Conversion/</loc>
-    </url>
-    
-    <url>
-        <loc>https://jaechang.dev/setting/i3-setting/</loc>
-    </url>
-    
-    <url>
-        <loc>https://jaechang.dev/random/test/</loc>
-    </url>
-    
 
     
     
     
-    <url>
-        <loc>https://jaechang.dev/categories/</loc>
-    </url>
+    
+    
+    
     
     
     
@@ -42,6 +22,14 @@
     
     
     
+    
+    
+    
+    
+    
+    <url>
+        <loc>https://jaechang.dev/publications/</loc>
+    </url>
     
     
     
