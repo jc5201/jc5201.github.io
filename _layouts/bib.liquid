@@ -181,17 +181,10 @@
     {% assign entrytype_text = entrytype | strip_html | strip %}
     {% capture periodical %}{{ entrytype }}{% if entrytype_text != "" and entryyear != "" %}, {% endif %}{{ entrymonth }}{{ entryyear }}{% endcapture %}
     <div class="periodical">
-      {{ periodical | strip }}
-    </div>
-    {% assign entry_note = entry.note | strip %}
-    {% if entry_note != "" %}
-      <div class="periodical">
-        {{ entry_note }}
-      </div>
-    {% endif %}
+      <span>{{ periodical | strip }}</span>
 
-    <!-- Links/Buttons -->
-    <div class="links">
+      <!-- Links/Buttons -->
+      <span class="links">
       {% if entry.award %}
         <a class="award btn btn-sm z-depth-0" role="button">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
@@ -264,7 +257,14 @@
       {% if entry.link %}
         <a href="{{ entry.link }}" class="btn btn-sm z-depth-0" role="button">Link</a>
       {% endif %}
+      </span>
     </div>
+    {% assign entry_note = entry.note | strip %}
+    {% if entry_note != "" %}
+      <div class="periodical">
+        {{ entry_note }}
+      </div>
+    {% endif %}
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}
       {% if entry.altmetric and entry.altmetric != 'false' %}

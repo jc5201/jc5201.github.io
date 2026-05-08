@@ -13,14 +13,9 @@ nav_order: 2
 
 <!-- ## pre-print -->
 
-{% bibliography --file preprint %}
+{% bibliography --file preprint --file references --file domestic %}
 
 <!-- ## major conferences -->
 
-{% bibliography --file references %}
-
-<!-- ## domestic conferences -->
-
-{% bibliography --file domestic %}
 
 </div>
