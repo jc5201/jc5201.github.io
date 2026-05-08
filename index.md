@@ -1,59 +1,64 @@
 ---
-layout: home
-author_profile: true
+layout: about
+title: about
+permalink: /
+subtitle: POSTECH Machine Learning Lab
+
+profile:
+  align: right
+  image: 251100.jpg
+  image_circular: false
+  more_info: >
+    
+
+selected_papers: false
+social: true
+
+announcements:
+  enabled: false
+
+latest_posts:
+  enabled: false
 ---
 
-Hello, I'm jaechang Kim. I'm a graduate student in [POSTECH Machine Learning Lab](http://ml.postech.ac.kr/) since 2021,
+Hi, I'm Jaechang Kim. I'm a graduate student in [POSTECH Machine Learning Lab](http://ml.postech.ac.kr/) since 2021,
 under supervision of Prof. [Jungseul Ok](https://sites.google.com/view/jungseulok).
 
-My current research focuses primarily on leveraging Large Language Models (LLMs) to enhance explainable AI. I explore how the reasoning and linguistic capabilities of LLMs can help interpret complex models and facilitate knowledge extraction. Besides this core direction, my broader research interests include:
+My research focuses on Human-AI Collaboration for Research: building AI systems that can help people reason, interpret complex models, and extract useful knowledge from data. In particular, I study how LLMs can support research workflows by communicating explanations, organizing knowledge, and assisting with scientific problem solving.
 
-* Trustworthy Machine Learning: Developing methods to explain the rationale behind machine learning model decisions and effectively transfer this knowledge to humans.
+My research interests include:
 
-* Human-AI Collaboration for Research: Leveraging research productivity with AI.
+* Human-AI Collaboration for Research: Leveraging AI to support research productivity, reasoning, and discovery.
 
-* Diverse ML Applications: Investigating a variety of applications, such as automated theorem proving and sound source separation.
+* Trustworthy Machine Learning: Developing methods that explain the rationale behind machine learning model decisions and transfer this knowledge to humans.
 
-
-## Publication (you may check [here](https://scholar.google.com/citations?user=WBJWwzYAAAAJ&hl=ko))
-
-### pre-print
-{% bibliography --file preprint %}
-
-### major conferences
-{% bibliography --file references %}
-
-### domestic conferences
-{% bibliography --file domestic %}
 
 ## Education
 
 * Ph.D. in POSTECH Graduate School of Artificial Intelligence (2021 ~ )
 * B.S. in POSTECH Department of Computer Science & Engineering (2016 ~ 2021)
 
+## Publications
+
+<div class="publications publications-compact">
+
+<h3>Pre-print</h3>
+
+{% bibliography --file preprint %}
+
+<h3>Major Conferences</h3>
+
+{% bibliography --file references %}
+
+</div>
+
 ## Work Experience
 
-* Instenship in Sony Global Corporation (2025.10 ~ 2026.02)
+* Internship in Sony Global Corporation (2025.10 ~ 2026.02)
 
 * Internship in Naver (2020.07 ~ 2020.08)
 
 * Internship with Prof. Sungwoo Park (2019.05 ~ 2019.10)
-    [https://www.datamonad.com/](https://www.datamonad.com/)
+  [https://www.datamonad.com/](https://www.datamonad.com/)
 
 * Internship in Netmarble AI Revolution Center (2018.06 ~ 2018.08)
-
-
-<!--
-
-## Teaching
-
-* Computer Architecture (TA, 2023 Spring)
-* Intro. to Computer SW Systems (TA, 2022 Fall)
-
-## Awards
-
-* 글로벌 핵심인재 양성지원 사업 우수성과 (우수상) (2021, IITP) 
-* 2021학년도 인공지능대학원 대학원생 우수논문상 (최우수상) (2021, POSTECH AIGS) 
-
--->
-
