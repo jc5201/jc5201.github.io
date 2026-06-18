@@ -39,7 +39,7 @@ My current research interests include:
 ## Education & Experience
 
 <dl class="profile-list">
-  <dt>Ph.D. in POSTECH (2021.03 - 2026.08 (tentative))</dt>
+  <dt>Ph.D. in POSTECH (2021.03 - 2026.08)</dt>
     <dd>Graduate School of Artificial Intelligence</dd>
   <dt>Research Internship in Sony Global Corporation (2025.10 - 2026.02)</dt>
     <dd>Automatic Discovery of Visual Prompts for Large Vision Language Models by Agentic Exploration</dd>

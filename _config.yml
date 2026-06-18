@@ -6,8 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Jaechang
 middle_name:
 last_name: Kim
-contact_note: >
-  Graduate student at POSTECH Machine Learning Lab.
+contact_note:
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Jaechang Kim's academic homepage.
 footer_text: >

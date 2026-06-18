@@ -750,6 +750,20 @@ a:focus {
 }
 
 
+/* Disabled link-button */
+.button.is-disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed !important;
+  pointer-events: auto;
+}
+.button.is-disabled:hover,
+.button[aria-disabled="true"]:hover {
+  transform: none !important;
+  background: var(--text-primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
 /* Venue badge under author block */
 .publication-venue-wrap {
   margin-top: 0.9rem;
