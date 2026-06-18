@@ -150,7 +150,8 @@ collections:
       layout: post
     output: false
   projects:
-    output: false
+    output: true
+    permalink: /:collection/:path/
   teachings:
     output: false
 
