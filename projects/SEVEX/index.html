@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="SEVEX: Visual Prompt Discovery via Semantic Exploration">
+  <meta name="description" content="SEVEX is an agent-driven framework that automatically discovers task-wise visual prompts for Large Vision-Language Models through semantic exploration in an abstract idea space.">
+  <meta name="keywords" content="Large Vision-Language Model, LVLM, visual prompt, automated prompt engineering, agentic exploration, semantic backpropagation, BlindTest, BLINK">
+  <meta name="author" content="Jaechang Kim, Yotaro Shimose, Zhao Wang, Kuang-Da Wang, Jungseul Ok, Shingo Takamatsu">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Sony Group Corporation">
+  <meta property="og:title" content="SEVEX: Visual Prompt Discovery via Semantic Exploration">
+  <meta property="og:description" content="An automated semantic exploration framework that discovers task-wise visual prompts for LVLMs, outperforming SketchPad and other baselines on BlindTest and BLINK.">
+  <meta property="og:url" content="#">
+  <meta property="og:image" content="static/images/problem_setting.png">
+  <meta property="og:image:alt" content="SEVEX: Visual Prompt Discovery via Semantic Exploration">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEVEX: Visual Prompt Discovery via Semantic Exploration">
+  <meta name="twitter:description" content="An automated semantic exploration framework for discovering task-wise visual prompts for LVLMs.">
+  <meta name="twitter:image" content="static/images/problem_setting.png">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Visual Prompt Discovery via Semantic Exploration">
+  <meta name="citation_author" content="Kim, Jaechang">
+  <meta name="citation_author" content="Shimose, Yotaro">
+  <meta name="citation_author" content="Wang, Zhao">
+  <meta name="citation_author" content="Wang, Kuang-Da">
+  <meta name="citation_author" content="Ok, Jungseul">
+  <meta name="citation_author" content="Takamatsu, Shingo">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="ECCV">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>SEVEX: Visual Prompt Discovery via Semantic Exploration</title>
+
+  <!-- Empty favicon to suppress the default /favicon.ico request -->
+  <link rel="icon" href="data:,">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Visual Prompt Discovery<br>via Semantic Exploration</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://jaechang.dev/" target="_blank">Jaechang Kim</a><sup>1,2,*</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/%E6%B4%8B%E5%A4%AA%E6%9C%97-%E4%B8%8B%E7%80%AC-055704272/" target="_blank">Yotaro Shimose</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/wang1946may7/" target="_blank">Zhao Wang</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://kuangdw.github.io/" target="_blank">Kuang-Da Wang</a><sup>1,3,*</sup>,</span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/jungseulok" target="_blank">Jungseul Ok</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/shingotakamatsu/" target="_blank">Shingo Takamatsu</a><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Sony Group Corporation&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>2</sup>POSTECH&nbsp;&nbsp;</span>
+              <span class="author-block"><sup>3</sup>National Yang Ming Chiao Tung University</span>
+              <br>
+              <span class="author-block"><small><sup>*</sup>Work done during an internship at Sony</small></span>
+            </div>
+
+            <div class="publication-venue-wrap">
+              <span class="publication-venue-badge">ECCV 2026</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2603.16250" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+              </div>
+
+              <div class="publication-logos">
+                <img src="static/images/Sony_logo.svg" alt="Sony Group Corporation">
+                <img src="static/images/postech_logo.png" alt="POSTECH">
+                <img src="static/images/mllab_logo.png" alt="Machine Learning Lab, POSTECH">
+                <img src="static/images/nycu_logo.png" alt="National Yang Ming Chiao Tung University">
+                <img src="static/images/ECCV_2026_Logo.svg" alt="ECCV 2026">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Teaser figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/problem_setting.png" alt="Overview of visual prompting paradigms for LVLMs" style="width:100%; height:auto;"/>
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        <strong>Overview of visual prompting paradigms for LVLMs.</strong>
+        Visual prompts effectively mitigate perception failures of LVLMs.
+        Rather than relying on manual discovery or per-sample zero-shot generation,
+        SEVEX explores task-wise visual prompts efficiently through agent-driven semantic exploration.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser figure -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large Vision-Language Models (LVLMs) encounter significant challenges in image understanding
+            and visual reasoning, leading to critical perception failures. Visual prompts, which incorporate
+            image manipulation code, have shown promising potential in mitigating these issues.
+            While visual prompts have emerged as a promising direction, previous methods for visual prompt
+            generation have focused on tool selection rather than diagnosing and mitigating the root causes
+            of LVLM perception failures. Because of the opacity and unpredictability of LVLMs, optimal
+            visual prompts must be discovered through empirical experiments, which have relied on manual
+            human trial-and-error.
+          </p>
+          <p>
+            In this work, we propose an automated semantic exploration framework for discovering task-wise
+            visual prompts. Unlike previous methods, our approach enables diverse yet efficient exploration
+            through agent-driven experiments, minimizing human intervention and avoiding the inefficiency
+            of per-sample generation. We introduce a semantic exploration algorithm named <strong>SEVEX</strong>,
+            which addresses two major challenges of visual prompt exploration:
+            (1) the distraction caused by lengthy, low-level code, and
+            (2) the vast, unstructured search space of visual prompts.
+            Specifically, our method leverages an abstract idea space as a search space, a novelty-guided
+            selection algorithm, and a semantic feedback-driven ideation process to efficiently explore
+            diverse visual prompts based on empirical results.
+          </p>
+          <p>
+            We evaluate SEVEX on the BlindTest and BLINK benchmarks, which are specifically designed to
+            assess LVLM perception. Experimental results demonstrate that SEVEX significantly outperforms
+            baseline methods in task accuracy, inference efficiency, exploration efficiency, and exploration
+            stability. Notably, our framework discovers sophisticated and counter-intuitive visual strategies
+            that go beyond conventional tool usage, offering a new paradigm for enhancing LVLM perception
+            through automated, task-wise visual prompts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Method overview -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            SEVEX treats visual prompt discovery as an iterative search problem over a high-level
+            <em>idea space</em>, rather than searching directly over raw code. The core of our framework is
+            a dynamically expanding search tree in which each node represents an abstract idea for a visual
+            prompt. An LLM agent generates diverse ideas, selects a node with the highest potential using
+            <strong>Novelty-guided UCT (NUCT)</strong>, instantiates it as an executable visual prompt,
+            evaluates it empirically, and back-propagates actionable insights for future idea generation.
+          </p>
+        </div>
+        <img src="static/images/method_overview.png" alt="Overview of SEVEX" style="width:100%; height:auto;"/>
+        <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+          <strong>Overview of SEVEX.</strong>
+          The agent generates diverse ideas, selects the node with the highest potential, executes the
+          idea, and back-propagates insights into ancestor nodes for future idea generation.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End method overview -->
+
+
+<!-- Key results -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Key Results</h2>
+    <div class="columns is-multiline is-centered" style="margin-top: 1rem;">
+      <div class="column is-half">
+        <div class="box has-text-centered" style="height: 100%;">
+          <p class="heading">BlindTest avg. accuracy</p>
+          <p class="title">72.4%</p>
+          <p class="subtitle is-6">vs. SketchPad 47.4% &nbsp;/&nbsp; Naive 65.6%</p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box has-text-centered" style="height: 100%;">
+          <p class="heading">BLINK avg. accuracy</p>
+          <p class="title">84.1%</p>
+          <p class="subtitle is-6">vs. SketchPad 78.3% &nbsp;/&nbsp; Naive 76.5%</p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box has-text-centered" style="height: 100%;">
+          <p class="heading">Inference cost (relative to Naive)</p>
+          <p class="title">+10.9%</p>
+          <p class="subtitle is-6">SketchPad uses ~11&times; more tokens per sample</p>
+        </div>
+      </div>
+      <div class="column is-half">
+        <div class="box has-text-centered" style="height: 100%;">
+          <p class="heading">Exploration cost vs. SketchPad+APE</p>
+          <p class="title">11.5%</p>
+          <p class="subtitle is-6">Far more efficient idea-space search</p>
+        </div>
+      </div>
+    </div>
+    <p class="has-text-centered is-size-6" style="margin-top: 1rem;">
+      Averaged over four BlindTest tasks and five BLINK tasks. Backbone: Gemini-2.5-flash, 50 exploration iterations.
+    </p>
+  </div>
+</section>
+<!-- End key results -->
+
+
+<!-- Image carousel: qualitative examples -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Discovered Visual Prompts</h2>
+      <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+        Examples of visual prompts that SEVEX discovered automatically. Code and text prompts are simplified for visualization.
+      </p>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item">
+          <img src="static/images/qualitative_circle.png" alt="SEVEX result on CircledLetter task" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>CircledLetter.</strong>
+            The agent uses object detection to localize the target region and draws precise reference
+            lines to help the LVLM distinguish uppercase from lowercase characters.
+          </h2>
+        </div>
+        <div class="item">
+          <img src="static/images/qualitative_jigsaw.png" alt="SEVEX result on Jigsaw task" loading="lazy"/>
+          <h2 class="subtitle has-text-centered">
+            <strong>Jigsaw.</strong>
+            The agent overlays candidate pieces onto the query image and repurposes a depth estimation
+            model to detect unnatural discontinuities — a use beyond the tool's intended purpose.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End image carousel -->
+
+
+<!-- Ablation plots -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3 has-text-centered">Exploration Efficiency</h2>
+    <p class="has-text-centered" style="margin-bottom: 1.5rem;">
+      Each component of SEVEX is essential for efficient exploration.
+      Development-set accuracy is averaged over five independent runs.
+    </p>
+    <div class="columns is-centered">
+      <div class="column is-half">
+        <img src="static/images/progress_jigsaw.png" alt="Accuracy progress on Jigsaw" style="width:100%; height:auto;"/>
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.5rem;">Jigsaw</h2>
+      </div>
+      <div class="column is-half">
+        <img src="static/images/progress_circle.png" alt="Accuracy progress on CircledLetter" style="width:100%; height:auto;"/>
+        <h2 class="subtitle has-text-centered" style="margin-top: 0.5rem;">CircledLetter</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End ablation plots -->
+
+
+<!-- Non-transferability -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Non-transferability of Visual Prompts</h2>
+        <div class="content has-text-justified">
+          <p>
+            We find that optimal visual prompts are rarely transferable across different LVLM backbones.
+            A prompt that improves one model can degrade another — for example, a strategy that boosts
+            Claude often underperforms on GPT, and vice versa. This reinforces the need for an
+            <em>automated, model-specific</em> discovery framework rather than relying on a single
+            hand-crafted prompt.
+          </p>
+        </div>
+        <img src="static/images/transfer_qualitative.png" alt="Non-transferability of visual prompts across LVLMs" style="width:100%; height:auto;"/>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End non-transferability -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@inproceedings{kim2026sevex,
+  title     = {Visual Prompt Discovery via Semantic Exploration},
+  author    = {Kim, Jaechang and Shimose, Yotaro and Wang, Zhao and Wang, Kuang-Da and Ok, Jungseul and Takamatsu, Shingo},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026}
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
