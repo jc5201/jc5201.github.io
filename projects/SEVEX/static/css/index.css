@@ -768,14 +768,14 @@ a:focus {
 .publication-venue-wrap {
   margin-top: 0rem;
   margin-bottom: 0rem;
-  display: flex;       
+  display: inline-flex;       
   justify-content: center;
   align-items: center; 
   gap: 15px;           
 }
 .publication-venue-badge {
   margin-top: 1rem;
-  display: inline-block;
+  display: flex;
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.01em;
