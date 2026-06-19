@@ -766,20 +766,27 @@ a:focus {
 
 /* Venue badge under author block */
 .publication-venue-wrap {
-  margin-top: 0.9rem;
-  margin-bottom: 1.25rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+  display: flex;       
+  justify-content: center;
+  align-items: center; 
+  gap: 15px;           
 }
 .publication-venue-badge {
+  margin-top: 1rem;
   display: inline-block;
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: 0.01em;
   color: #4a4a4a;
+  align-items: center;
+  
 }
 
 /* Affiliation / venue logo strip (hero) */
 .publication-logos {
-  margin-top: 2.25rem;
+  margin-top: 1rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -823,4 +830,3 @@ a:focus {
     height: 80px;
   }
 }
-
