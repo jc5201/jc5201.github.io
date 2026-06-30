@@ -45,7 +45,7 @@ My current research interests include:
     <dd>Automatic Discovery of Visual Prompts for Large Vision Language Models by Agentic Exploration</dd>
   <dt>B.S. in POSTECH (2016.03 - 2021.02)</dt>
     <dd>Department of Computer Science &amp; Engineering</dd>
-  <dt>Software Internship in Naver (2020.07 - 2020.08)</dt>
+  <dt>Software Engineer Internship in Naver (2020.07 - 2020.08)</dt>
     <dd>Internal Tool Development</dd>
   <dt>Research Internship in Netmarble AI Revolution Center (2018.06 - 2018.08)</dt>
     <dd>Game-playing AI with Reinforcement Learning</dd>
