@@ -21,11 +21,11 @@ latest_posts:
   enabled: false
 ---
 
-Hi, I'm Jaechang Kim. I'm a graduate student in [POSTECH Machine Learning Lab](http://ml.postech.ac.kr/) since 2021,
-under supervision of Prof. [Jungseul Ok](https://sites.google.com/view/jungseulok).
+Hi, I'm Jaechang Kim. I'm a postdoctoral  researcher at [POSTECH Machine Learning Lab](http://ml.postech.ac.kr/).
+I received my Ph.D. at POSTECH under the supervision of Prof. [Jungseul Ok](https://sites.google.com/view/jungseulok).
 I was a research intern at Sony.
 
-I am interested in building AI systems that can work with researchers as collaborators: helping them reason through problems, organize knowledge, and make complex model behavior easier to understand.
+I'm interested in building AI systems that can work with researchers as collaborators: helping them reason through problems, organize knowledge, and make complex model behavior easier to understand.
 My current research interests include:
 
 <dl class="research-interests">
@@ -39,6 +39,8 @@ My current research interests include:
 ## Education & Experience
 
 <dl class="profile-list">
+  <dt>Post-doc in POSTECH (2026.09 - )</dt>
+    <dd>with Prof. Jungseul Ok</dd>
   <dt>Ph.D. in POSTECH (2021.03 - 2026.08)</dt>
     <dd>Graduate School of Artificial Intelligence</dd>
   <dt>Research Internship in Sony Global Corporation (2025.10 - 2026.02)</dt>
@@ -59,8 +61,21 @@ My current research interests include:
 
 </div>
 
-<!-- ## Work Experience
 
-* Internship with Prof. Sungwoo Park (2019.05 ~ 2019.10)
-  [https://www.datamonad.com/](https://www.datamonad.com/)
- -->
+## Awards
+
+
+<dl class="profile-list">
+  <dt>POSTECH Initiative for fostering Unicorn of Research & Innovation (PIURI) Fellowship (2026)</dt>
+  <dt>Top 3, Global AI Research Leap (GARL) Challenge 2026 (2026)</dt>
+  <dt>Excellence Award, Graduate Student Excellent Paper Award, Graduate School of AI, POSTECH (2021)</dt>
+  <dt>Excellence Award, IITP Global Talent Training Support Project (2021)</dt>
+</dl>
+
+## Academic Services
+
+<dl class="profile-list">
+  <dt>Conference and Journal Reviewers</dt>
+    <dd>ICLR, ICML, NeurIPS, ICASSP, ACL Rolling Review, IEEE MLSP, JCSE</dd>
+</dl>
+
