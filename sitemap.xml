@@ -14,7 +14,7 @@
     
     
     <url>
-        <loc>https://jaechang.dev/</loc>
+        <loc>http://localhost:4000/</loc>
     </url>
     
     
@@ -28,7 +28,7 @@
     
     
     <url>
-        <loc>https://jaechang.dev/publications/</loc>
+        <loc>http://localhost:4000/publications/</loc>
     </url>
     
     
