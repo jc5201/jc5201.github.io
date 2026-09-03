@@ -76,6 +76,6 @@ My current research interests include:
 
 <dl class="profile-list">
   <dt>Conference and Journal Reviewers</dt>
-    <dd>ICLR, ICML, NeurIPS, ICASSP, ACL Rolling Review, IEEE MLSP, JCSE</dd>
+    <dd>ICLR, ICML, NeurIPS, AAAI, ACL Rolling Review, ICASSP, IEEE MLSP, JCSE</dd>
 </dl>
 
