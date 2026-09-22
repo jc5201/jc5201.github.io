@@ -67,10 +67,18 @@ My current research interests include:
 
 <dl class="profile-list">
   <dt>POSTECH Initiative for fostering Unicorn of Research & Innovation (PIURI) Fellowship (2026)</dt>
-  <dt>[Top 3, Global AI Research Leap (GARL) Challenge 2026](https://nairl.kr/news/garl-2026-challenge-global-networking/?lang=ko) (2026) </dt>
+  <dt><a href="https://nairl.kr/news/garl-2026-challenge-global-networking/?lang=ko">Top 3, Global AI Research Leap (GARL) Challenge 2026</a> (2026) </dt>
   <dt>Excellence Award, Graduate Student Excellent Paper Award, Graduate School of AI, POSTECH (2021)</dt>
   <dt>Excellence Award, IITP Global Talent Training Support Project (2021)</dt>
 </dl>
+
+<!-- 
+## Invited Talks
+<dl class="profile-list">
+  <dt> KTH (KTH Royal Institute of Technology), Agent-driven method discovery with iterative experiments (2026)</dt>
+  <dt> KU (University of Copenhagen), Agent-driven method discovery with iterative experiments (2026)</dt>
+</dl> 
+-->
 
 ## Academic Services
 
