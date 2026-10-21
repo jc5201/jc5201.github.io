@@ -66,7 +66,7 @@ My current research interests include:
 
 
 <dl class="profile-list">
-  <dt>POSTECH Initiative for fostering Unicorn of Research & Innovation (PIURI) Fellowship (2026)</dt>
+  <dt><a href="https://ai.postech.ac.kr/news/view/id/915">POSTECH Initiative for fostering Unicorn of Research & Innovation (PIURI) Fellowship (2026)</dt>
   <dt><a href="https://nairl.kr/news/garl-2026-challenge-global-networking/?lang=ko">Top 3, Global AI Research Leap (GARL) Challenge 2026</a> (2026) </dt>
   <dt>Excellence Award, Graduate Student Excellent Paper Award, Graduate School of AI, POSTECH (2021)</dt>
   <dt>Excellence Award, IITP Global Talent Training Support Project (2021)</dt>
@@ -84,6 +84,6 @@ My current research interests include:
 
 <dl class="profile-list">
   <dt>Conference and Journal Reviewers</dt>
-    <dd>ICLR, ICML, NeurIPS, AAAI, ACL Rolling Review, ICASSP, IEEE MLSP, JCSE</dd>
+    <dd>ICLR, NeurIPS, ICML, AAAI, ACL Rolling Review, ICASSP, IEEE MLSP, JCSE</dd>
 </dl>
 
