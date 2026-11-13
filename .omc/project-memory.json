@@ -1,0 +1,232 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1794533296123,
+  "projectRoot": "D:\\Documents\\Git\\jc5201.github.io",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "Ruby",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "Gemfile"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "bundler",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": null,
+    "devCommand": null,
+    "scripts": {}
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "assets"
+    ],
+    "gitBranches": {
+      "defaultBranch": "master",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "assets": {
+      "path": "assets",
+      "purpose": "Static assets",
+      "fileCount": 6,
+      "lastAccessed": 1794533296105,
+      "keyFiles": [
+        "android-chrome-192x192.png",
+        "android-chrome-512x512.png",
+        "apple-touch-icon.png",
+        "favicon-16x16.png",
+        "favicon-32x32.png"
+      ]
+    },
+    "_bibliography": {
+      "path": "_bibliography",
+      "purpose": null,
+      "fileCount": 3,
+      "lastAccessed": 1794533296105,
+      "keyFiles": [
+        "domestic.bib",
+        "preprint.bib",
+        "references.bib"
+      ]
+    },
+    "_data": {
+      "path": "_data",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1794533296113,
+      "keyFiles": [
+        "citations.yml",
+        "coauthors.yml",
+        "navigation.yml",
+        "socials.yml",
+        "ui-text.yml"
+      ]
+    },
+    "_includes": {
+      "path": "_includes",
+      "purpose": null,
+      "fileCount": 61,
+      "lastAccessed": 1794533296114,
+      "keyFiles": [
+        "analytics.html",
+        "archive-single.html",
+        "audio.liquid",
+        "author-profile-custom-links.html",
+        "author-profile.html"
+      ]
+    },
+    "_layouts": {
+      "path": "_layouts",
+      "purpose": null,
+      "fileCount": 27,
+      "lastAccessed": 1794533296114,
+      "keyFiles": [
+        "about.liquid",
+        "archive-taxonomy.html",
+        "archive.html",
+        "archive.liquid",
+        "bib.liquid"
+      ]
+    },
+    "_pages": {
+      "path": "_pages",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1794533296114,
+      "keyFiles": [
+        "category-archive.md",
+        "publications.md"
+      ]
+    },
+    "_plugins": {
+      "path": "_plugins",
+      "purpose": null,
+      "fileCount": 6,
+      "lastAccessed": 1794533296115,
+      "keyFiles": [
+        "citation-tags.rb",
+        "details.rb",
+        "ext.rb",
+        "file-exists.rb",
+        "hide-custom-bibtex.rb"
+      ]
+    },
+    "_posts": {
+      "path": "_posts",
+      "purpose": null,
+      "fileCount": 8,
+      "lastAccessed": 1794533296115,
+      "keyFiles": [
+        "2019-10-31-test.md",
+        "2020-08-17-books-amusing-ourselves-to-death.md",
+        "2020-08-21-books-brave-new-world.md",
+        "2020-08-28-gpt-3-source-code-generation.md",
+        "2020-11-14-i3-setting.md"
+      ]
+    },
+    "_projects": {
+      "path": "_projects",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1794533296115,
+      "keyFiles": []
+    },
+    "_sass": {
+      "path": "_sass",
+      "purpose": null,
+      "fileCount": 16,
+      "lastAccessed": 1794533296115,
+      "keyFiles": [
+        "minimal-mistakes.scss",
+        "_blog.scss",
+        "_components.scss",
+        "_cv.scss",
+        "_distill.scss"
+      ]
+    },
+    "_scripts": {
+      "path": "_scripts",
+      "purpose": null,
+      "fileCount": 7,
+      "lastAccessed": 1794533296115,
+      "keyFiles": [
+        "cookie-consent-setup.js",
+        "cronitor-analytics-setup.js",
+        "giscus-setup.js",
+        "google-analytics-setup.js",
+        "open-panel-analytics-setup.js"
+      ]
+    },
+    "_site": {
+      "path": "_site",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1794533296116,
+      "keyFiles": [
+        "CNAME",
+        "feed.xml",
+        "index.html",
+        "robots.txt",
+        "sitemap.xml"
+      ]
+    },
+    "_site\\assets": {
+      "path": "_site\\assets",
+      "purpose": "Static assets",
+      "fileCount": 6,
+      "lastAccessed": 1794533296118,
+      "keyFiles": [
+        "android-chrome-192x192.png",
+        "android-chrome-512x512.png",
+        "apple-touch-icon.png"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "_layouts\\bib.liquid",
+      "accessCount": 1,
+      "lastAccessed": 1794533591173,
+      "type": "file"
+    },
+    {
+      "path": "_sass\\_publications.scss",
+      "accessCount": 1,
+      "lastAccessed": 1794533591896,
+      "type": "file"
+    },
+    {
+      "path": "_pages\\publications.md",
+      "accessCount": 1,
+      "lastAccessed": 1794533592557,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

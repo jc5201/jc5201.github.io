@@ -69,6 +69,11 @@
 
       .title {
         font-weight: bolder;
+
+        .pubnum {
+          color: var(--global-theme-color);
+          margin-right: 0.25rem;
+        }
       }
 
       .author {
